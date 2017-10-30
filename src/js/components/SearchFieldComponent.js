@@ -19,19 +19,20 @@ class SearchField extends React.Component {
     });
   }
 
-  handleSubmit(){
+  handleSubmit(e){
+    e.preventDefault();
     const { dispatch } = this.props;
     dispatch(actions.getCityWeather(this.state.city));
   }
 
   render() {
     return (
-      <div className="search">
+      <form onSubmit={ this.handleSubmit }>
         <input className="col-md-11" onChange= { this.handleChange }/>
-        <button className="btn btn-secondary col-md-1" type="button" onClick={ this.handleSubmit }>
+        <button className="btn btn-secondary col-md-1" type="submit">
           Go!
         </button>
-      </div>
+      </form>
     );
   }
 }

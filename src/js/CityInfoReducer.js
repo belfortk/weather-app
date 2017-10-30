@@ -1,13 +1,13 @@
 const initialState = {
-  city: "charm city",
-  lat: "31",
-  lon: "32",
-  temp: "50.4",
-  pressure: "2",
-  humidity: "6",
-  lowTemp: "45",
-  highTemp: "55",
-  windSpeed: "6",
+  city: '',
+  lat: '',
+  lon: '',
+  temp: '',
+  pressure: '',
+  humidity: '',
+  lowTemp: '',
+  highTemp: '',
+  windSpeed: '',
   dataResolution: 1
 };
 
