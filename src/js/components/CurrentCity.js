@@ -9,8 +9,11 @@ class CurrentCity extends React.Component {
   render() {
     return (
       <div className='col-md-12'>
-        <p>{ this.props.store.city }</p>
-        <p>{this.props.store.lat} , {this.props.store.lon}</p>
+
+        <p> <img src={'https://api.openweathermap.org//img/w/' + this.props.store.icon + '.png' }>
+        </img>
+        { this.props.store.city }</p>
+        <p> {this.props.store.lat } {this.props.store.lon}</p>
       </div>
     );
   }

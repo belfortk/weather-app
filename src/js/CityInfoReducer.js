@@ -8,6 +8,9 @@ const initialState = {
   lowTemp: '',
   highTemp: '',
   windSpeed: '',
+  mainDesc: '',
+  desc: '',
+  icon: '',
   dataResolution: 1
 };
 
