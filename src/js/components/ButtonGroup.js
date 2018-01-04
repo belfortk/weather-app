@@ -24,7 +24,7 @@ class ButtonGroup extends React.Component {
           <button type="button" className="btn btn-secondary" name="new york" onClick={this.handleClick}>
             New York
           </button>
-          <button type="button" className="btn btn-secondary" name="washington dc" onClick={this.handleClick}>
+          <button type="button" className="btn btn-secondary" name="washington" onClick={this.handleClick}>
             Washington DC
           </button>
           <button type="button" className="btn btn-secondary" name="london" onClick={this.handleClick}>

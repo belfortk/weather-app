@@ -10,15 +10,16 @@ class SearchHistory extends React.Component {
   render() {
     var count = 0
     return (
-      <div className="card">
+      <div id="search-history" className="card">
         <div className="card-header">Search History</div>
 
         <ul className="list-group">
-          {(this.props.store.prevCities.reverse().slice(0, 3)).map(city => (
+          {(this.props.store.prevCities.reverse().slice(0, 3)).map((city, i) => (
             <SearchHistoryItem
               name={ city.name }
               date={ city.date }
               time={ city.time }
+              key={ i }
             />
 
           ))}

@@ -15,7 +15,7 @@ class CityInformation extends React.Component {
 
   render() {
     return (
-      <div className='card'>
+      <div id="current-city" className='card'>
         <div className='card-header'>City Information</div>
         <div className='card-block' id='left-card-body'>
           <div className='row'>

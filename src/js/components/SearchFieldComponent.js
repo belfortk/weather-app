@@ -28,8 +28,8 @@ class SearchField extends React.Component {
   render() {
     return (
       <form onSubmit={ this.handleSubmit }>
-        <input className="col-md-11" onChange= { this.handleChange }/>
-        <button className="btn btn-secondary col-md-1" type="submit">
+        <input id="search-field" className="col-md-10" style={{marginRight:"1rem"}} onChange= { this.handleChange }/>
+        <button id="search-button" className="btn btn-secondary col-md-1" type="submit">
           Go!
         </button>
       </form>

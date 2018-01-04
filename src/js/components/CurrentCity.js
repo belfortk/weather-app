@@ -1,19 +1,27 @@
 import React from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 class CurrentCity extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div className='col-md-12'>
-
-        <p> <img src={'https://api.openweathermap.org//img/w/' + this.props.store.icon + '.png' }>
-        </img>
-        { this.props.store.city }</p>
-        <p> {this.props.store.lat } {this.props.store.lon}</p>
+      <div className="col-md-12">
+        <p>
+          {
+            this.props.store.icon ? (
+            <img src={"https://api.openweathermap.org//img/w/" + this.props.store.icon + ".png"} />
+          ) : (
+            <span> <strong> Search/select a city </strong></span>
+          )}
+          {this.props.store.city}
+        </p>
+        <p>
+          {" "}
+          {this.props.store.lat} {this.props.store.lon}
+        </p>
       </div>
     );
   }
@@ -26,4 +34,3 @@ function mapStoreToProps(store) {
 }
 
 export default connect(mapStoreToProps)(CurrentCity);
-

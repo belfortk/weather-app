@@ -3,10 +3,25 @@ import CityInformation from "./components/CityInformation";
 import SearchHistory from "./components/SearchHistory";
 import ButtonGroup from "./components/ButtonGroup";
 import SearchFieldComponent from "./components/SearchFieldComponent";
+import { connect } from 'react-redux';
+import * as actions from "./actions";
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    const success = (position) => {
+      const { dispatch } = this.props;
+      dispatch(actions.getCurrentCityWeather(position.coords.latitude, position.coords.longitude));
+    };
+
+    const error = () => {
+      console.log("User did not give location permission");
+    };
+
+    navigator.geolocation.getCurrentPosition(success, error);
   }
 
   render() {
@@ -18,11 +33,11 @@ export default class App extends React.Component {
         </div>
 
         <div className="row">
-          <div className='col-md-12'>
-          <ButtonGroup />
+          <div className="col-md-12">
+            <ButtonGroup />
           </div>
-          <div className='col-md-12'>
-          <SearchFieldComponent />
+          <div className="col-md-12">
+            <SearchFieldComponent />
           </div>
         </div>
 
@@ -38,3 +53,11 @@ export default class App extends React.Component {
     );
   }
 }
+
+function mapStateToProps(store) {
+  return {
+    store: store.cityInfo
+  };
+}
+
+export default connect(mapStateToProps)(App);
